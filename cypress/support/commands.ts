@@ -25,5 +25,3 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 
-const mysql = require('cypress-mysql');
-mysql.addCommands();
