@@ -1,9 +1,12 @@
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('https://example.cypress.io')
+    //connect to database
     const dropTable = 'DROP TABLE `mydb`.`users`;'
     cy.query(dropTable).then(res => {
       cy.log(res); // outputs json array of selected rows 
+    
+
     });
 
 
