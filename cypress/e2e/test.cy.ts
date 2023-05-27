@@ -1,16 +1,13 @@
 describe('template spec', () => {
+  type IWrapLogicSpec = (num:number,name:string,arr:Array<string>) => void;
+  type SomeWrappe = IWrapLogicSpec;
   it('passes', () => {
     cy.visit('https://example.cypress.io')
     //connect to database
     const dropTable = 'DROP TABLE `mydb`.`users`;'
     cy.query(dropTable).then(res => {
       cy.log(res); // outputs json array of selected rows 
-    
-
     });
-
-
-
   })
 
   it('create new state', () => {
@@ -25,3 +22,4 @@ describe('template spec', () => {
     });
   });
 })
+
