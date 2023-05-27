@@ -1,25 +1,30 @@
 
 describe('template spec', () => {
-  type IWrapLogicSpec = (num: number, name: string, arr: Array<string>) => void;
+  type IWrapLogicSpec = (num: number, name: string, arr?: Array<string>) => void;
   type SomeWrappe = Partial<IWrapLogicSpec>
-    it('passes', () => {
-      cy.visit('https://example.cypress.io')
-      //connect to database
-      const dropTable = 'DROP TABLE `mydb`.`users`;'
-      cy.query(dropTable).then(res => {
-        cy.log(res); // outputs json array of selected rows 
-      });
-    })
+  const wrapper: IWrapLogicSpec = (num, name, arr) => {
+    return { name: name, num: num, arr: arr }
+  }
+  wrapper(14, 'mani', ['mani', 'sahar'])
+
+  it('passes', () => {
+    cy.visit('https://example.cypress.io')
+    //connect to database
+    const dropTable = 'DROP TABLE `mydb`.`users`;'
+    cy.query(dropTable).then(res => {
+      cy.log(res as any); // outputs json array of selected rows 
+    });
+  })
 
   it('create new state', () => {
     const createNewDbState = "CREATE TABLE users (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(255), PRIMARY KEY (id));"
     const insertToDB =
       "INSERT INTO users (name) VALUES ('John'), ('mani'), ('sahar');"
     cy.query(createNewDbState).then(res => {
-      cy.log(res); // outputs json array of selected rows 
+      cy.log(res as any); // outputs json array of selected rows 
     });
     cy.query(insertToDB).then(res => {
-      cy.log(res); // outputs json array of selected rows 
+      cy.log(res as any); // outputs json array of selected rows 
     });
   });
 })
