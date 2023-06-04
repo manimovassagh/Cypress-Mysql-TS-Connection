@@ -2,7 +2,8 @@
 describe('template spec', () => {
   type IWrapLogicSpec = (num: number, name: string, arr?: Array<string>) => void;
   const wrapper: IWrapLogicSpec = (num, name, arr) => {
-    return { name: name, num: num, arr: arr }
+    return { name: name, num: num, arr: arr } 
+    //jz
   }
   wrapper(14, 'mani', ['mani', 'sahar'])
 
