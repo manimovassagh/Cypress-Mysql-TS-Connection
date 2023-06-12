@@ -3,7 +3,8 @@ describe('template spec', () => {
   type IWrapLogicSpec = (num: number, name: string, arr?: Array<string>) => void;
   const wrapper: IWrapLogicSpec = (num, name, arr) => {
     return { name: name, num: num, arr: arr }
-    //jzts
+    //change test behavior
+    //change
   }
   wrapper(14, 'mani', ['mani', 'sahar'])
 
