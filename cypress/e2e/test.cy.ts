@@ -10,6 +10,11 @@ describe('template spec', () => {
 
   it('passes', () => {
     cy.visit('https://example.cypress.io')
+    cy.window().then((window) => {
+      window.addEventListener('DOMContentLoaded', () => {
+        cy.log('Content loaded successfully')
+      })
+    })
     //connect to database
     const dropTable = 'DROP TABLE `mydb`.`users`;'
     cy.query(dropTable).then(res => {
