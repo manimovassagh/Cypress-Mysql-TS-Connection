@@ -4,7 +4,7 @@ describe('template spec', () => {
   const wrapper: IWrapLogicSpec = (num, name, arr) => {
     return { name: name, num: num, arr: arr }
     //change test behavior
-    //chang again new parameter
+    //chang again 
   }
   wrapper(14, 'mani', ['mani', 'sahar'])
 
