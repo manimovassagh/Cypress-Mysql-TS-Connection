@@ -13,6 +13,7 @@ describe('template spec', () => {
     cy.window().then((window) => {
       window.addEventListener('DOMContentLoaded', () => {
         cy.log('Content loaded successfully')
+        cy.get('h1').should('contain', 'Kitchen Sink')
       })
     })
     //connect to database
