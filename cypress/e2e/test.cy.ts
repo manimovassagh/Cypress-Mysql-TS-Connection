@@ -13,7 +13,6 @@ describe('template spec', () => {
     cy.window().then((window) => {
       window.addEventListener('DOMContentLoaded', () => {
         cy.log('Content loaded successfully')
-        cy.log('Content loaded successfully')
       })
     })
     //connect to database
