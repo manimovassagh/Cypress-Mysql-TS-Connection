@@ -7,6 +7,7 @@ describe('template spec', () => {
     //chang again 
   }
   wrapper(14, 'mani', ['mani', 'sahar'])
+  wrapper(14, 'mani', ['mani', 'sahar'])
 
   it('passes', () => {
     cy.visit('https://example.cypress.io')
